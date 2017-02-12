@@ -1,2 +1,5 @@
 language: java
 sudo: required
+
+deploy:
+  - $DOCKER_HUB_TRIGGER
