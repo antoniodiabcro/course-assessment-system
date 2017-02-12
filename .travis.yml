@@ -1,6 +1,6 @@
 language: java
 sudo: required
 deploy:
-  provider: dockerhub
+  provider: releases
 after_deploy:
   - $DOCKER_HUB_TRIGGER
