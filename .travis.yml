@@ -1,7 +1,4 @@
 language: java
 sudo: required
-deploy:
-  provider: script
-  script: ./trigger_docker_hub.sh
-  on:
-    branch: master
+after_success:
+  - ./trigger_docker_hub.sh
