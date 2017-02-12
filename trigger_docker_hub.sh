@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/sh
 curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/antoniodiabcro/course-assessment-system/trigger/d807dd61-b052-418c-9d62-b1caaa6a75d6/
