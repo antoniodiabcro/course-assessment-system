@@ -1,6 +1,4 @@
 language: java
 sudo: required
-deploy:
-  provider: releases
-after_deploy:
+after_success:
   - $DOCKER_HUB_TRIGGER
