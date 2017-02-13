@@ -54,6 +54,7 @@
 	        		<finalName>cas</finalName>
 	        		<archive>
 	        			<manifest>
+	        				<addClasspath>true</addClasspath>
 	        				<mainClass>edu.rit.dijkstra.cas.CourseAssessementSystemApplication</mainClass>
 	        			</manifest>
 	        		</archive>
