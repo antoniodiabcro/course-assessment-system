@@ -55,7 +55,7 @@
 	        		<archive>
 	        			<manifest>
 	        				<addClasspath>true</addClasspath>
-	        				<mainClass>edu.rit.dijkstra.cas.CourseAssessementSystemApplication</mainClass>
+	        				<mainClass>src/main/java/edu/rit/dijkstra/cas/CourseAssessementSystemApplication</mainClass>
 	        			</manifest>
 	        		</archive>
 	        		<!-- Get all project dependencies -->
