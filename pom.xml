@@ -52,6 +52,11 @@
 	        			That build context (by default) is the entire directory the Dockerfile is in -->
 	        		<outputDirectory>src/main/docker</outputDirectory>
 	        		<finalName>cas</finalName>
+	        		<archive>
+	        			<manifest>
+	        				<mainClass>edu.rit.dijkstra.cas.CourseAssessementSystemApplication</mainClass>
+	        			</manifest>
+	        		</archive>
 	        	</configuration>
 	      	</plugin>
 	        <plugin>
