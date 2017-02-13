@@ -43,37 +43,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-	      	<plugin>
-	        	<groupId>org.apache.maven.plugins</groupId>
-	        	<artifactId>maven-assembly-plugin</artifactId>
-	        	<configuration>
+				<configuration>
 	        		<!-- The Docker client sends the entire "build context" to the Docker daemon. 
 	        			That build context (by default) is the entire directory the Dockerfile is in -->
-	        		<outputDirectory>src/main/docker</outputDirectory>
-	        		<finalName>cas</finalName>
-	        		<archive>
-	        			<manifest>
-	        				<addClasspath>true</addClasspath>
-	        				<mainClass>src/main/java/edu/rit/dijkstra/cas/CourseAssessementSystemApplication</mainClass>
-	        			</manifest>
-	        		</archive>
-	        		<!-- Get all project dependencies -->
-	        		<descriptorRefs>
-	        			<descriptorRef>jar-with-dependencies</descriptorRef>
-	        		</descriptorRefs>
-	        	</configuration>
-	        	<executions>
-	        		<execution>
-	        			<id>make-assembly</id>
-	        			<!-- Bind to the packaging phase -->
-	        			<phase>package</phase>
-	        			<goals>
-	        				<goal>single</goal>
-	        			</goals>
-	        		</execution>
-	        	</executions>
-	      	</plugin>
+					<outputDirectory>src/main/docker</outputDirectory>
+					<finalName>cas</finalName>
+					<!-- If not specified THAN look for the first class with the main method -->
+					<mainClass></mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-repackage</id>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 	        <plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>docker-maven-plugin</artifactId>
