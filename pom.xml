@@ -48,7 +48,7 @@
 	        			That build context (by default) is the entire directory the Dockerfile is in -->
 					<outputDirectory>src/main/docker</outputDirectory>
 					<finalName>cas</finalName>
-					<!-- If not specified THAN look for the first class with the main method -->
+					<!-- If not specified THAN look for the first class with the main method (Spring uses internally a jar that will find it) -->
 					<mainClass></mainClass>
 				</configuration>
 				<executions>
@@ -60,6 +60,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!--  -->
 	        <plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>docker-maven-plugin</artifactId>
