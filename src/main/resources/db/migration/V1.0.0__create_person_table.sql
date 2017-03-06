@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS person (
+	person_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+	first_name VARCHAR(255) NOT NULL DEFAULT 'Unknown',
+	last_name VARCHAR(255) NOT NULL DEFAULT 'Unknown'
+);

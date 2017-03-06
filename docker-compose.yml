@@ -1,0 +1,35 @@
+version: '2.1'
+
+services:
+  test-mysql:
+    image: mysql:5
+    volumes:
+      - cas-db-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_DATABASE=bla
+    ports:
+      - 3307:3306
+    networks:
+      - cas-network-dc
+    restart: "no"
+    healthcheck:
+        test: ["CMD", "mysql", "-uroot", "-p123","-e","CREATE DATABASE IF NOT EXISTS bla"]
+        interval: 10s
+        timeout: 5s
+        retries: 2
+  cas-demo:
+    depends_on:
+      test-mysql:
+        condition: service_healthy
+    image: team-dijkstra/course-assessement-system
+    ports:
+      - "4040:4040"
+    networks:
+      - cas-network-dc
+    restart: "no"
+networks:
+  cas-network-dc:
+    driver: bridge
+volumes:
+  cas-db-data:

@@ -1,5 +1,6 @@
 target/
 backup_code_snippets.txt
+steps/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
