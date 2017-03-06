@@ -1,4 +1,9 @@
 language: java
 sudo: required
+services:
+  - mysql
+before_install:
+  - mysqladmin -u root -p'' password '123' 
+  - mysql -e 'CREATE DATABASE bla;'
 after_success:
   - ./trigger_docker_hub.sh
