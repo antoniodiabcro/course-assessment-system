@@ -2,8 +2,9 @@ language: java
 sudo: required
 services:
   - mysql
-before_install:
-  - mysqladmin -uroot -p'' password '123' 
-  - mysql -e 'CREATE DATABASE bla;'
+# before_install:
+#  - mysqladmin -uroot -p'' password '123' 
+#  - mysql -e 'CREATE DATABASE bla;'
+script: mvn spring-boot:run -Drun.arguments="--spring.datasource.password="
 after_success:
   - ./trigger_docker_hub.sh
